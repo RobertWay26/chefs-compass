@@ -16,6 +16,9 @@ export default function Home() {
       saveRecipe({
         ...generatedRecipe,
         imageUrl,
+        posted : false,
+        likes : 0,
+        likedBy : [],
       });
       setConfirmation('Recipe saved successfully!');
       setTimeout(() => setConfirmation(''), 3000); // Clear message after 3 seconds

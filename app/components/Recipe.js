@@ -6,6 +6,7 @@ import ConfirmDelete from './ConfirmDelete';
 import RecipeDetails from './RecipeDetails';
 import { doc, updateDoc, increment, arrayUnion, arrayRemove } from 'firebase/firestore';
 import { db } from '../../lib/firebaseConfig';
+import { FaThumbsUp } from 'react-icons/fa';
 
 const Recipe = ({ recipe, imageUrl, onDelete, onUpdateStatus, showLikeButton }) => {
   const { user } = useAuth();
@@ -139,10 +140,18 @@ const Recipe = ({ recipe, imageUrl, onDelete, onUpdateStatus, showLikeButton }) 
         <div className="flex items-center mt-4">
           <button
             onClick={handleLikeRecipe}
-            className="bg-blue-500 text-white py-1 px-2 rounded-full hover:bg-blue-600 transition-colors"
+            className={`${
+              hasLiked ? 'bg-green-500' : 'bg-blue-500'
+            } text-white py-1 px-2 rounded-full hover:${
+              hasLiked ? 'bg-green-600' : 'bg-blue-600'
+            } transition-colors flex items-center justify-center`}
             disabled={isLiking}
           >
-            {isLiking ? 'Processing...' : hasLiked ? 'Unlike' : 'Like'}
+            <FaThumbsUp
+              className={`${isLiking ? 'spin' : ''} ${
+                hasLiked ? 'text-yellow-400' : 'text-white'
+              }`}
+            />
           </button>
           <span className="ml-2 text-gray-700">{likeCount} Likes</span>
         </div>
