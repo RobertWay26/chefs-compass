@@ -1,3 +1,7 @@
+# Chef's Compass
+
+A full-stack web application for creating, sharing, and exploring personalized recipes. Developed with Next.js and Tailwind CSS, the app leverages the OpenAI API to generate unique recipe content and images based on user preferences. Integrated with Firebase for user authentication and real-time data management, allowing users to save, post, and like their favorite recipes.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
